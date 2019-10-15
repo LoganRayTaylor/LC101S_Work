@@ -1,0 +1,17 @@
+header {
+    padding: 25px;
+    border: 1px solid black;
+    background-color:rgb(128, 156, 240);
+}
+footer {
+    padding: 15px;
+    border: 1px solid black;
+}
+article {
+padding: 15px;
+border: 1px solid rgb(87, 87, 87);
+background-color: #f3ecec;
+}
+p {
+padding: 1px;
+}
