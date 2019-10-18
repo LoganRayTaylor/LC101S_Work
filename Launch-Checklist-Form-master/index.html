@@ -9,7 +9,7 @@
         <h1>Launch Checklist Form</h1>
         <div id="missionTarget">
             <!-- Fetch some planetary data -->
-        </div> 
+        </div>
         <div id="launchForm">
             <form>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
@@ -19,10 +19,10 @@
                     <label>Co-pilot Name <input type="text" name="copilotName"/></label>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Fuel Level (L) <input type="text" name="fuelLevel"/></label> 
+                    <label>Fuel Level (L) <input type=Number name="fuelLevel"/></label>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Cargo Mass (kg) <input type="text" name="cargoMass"/></label>
+                    <label>Cargo Mass (kg) <input type=Number name="cargoMass"/></label>
                 </div>
                 <button id="formSubmit">Submit</button>
             </form>
@@ -37,6 +37,24 @@
                     <li id="cargoStatus">Cargo mass low enough for launch</li>
                 </ol>
             </div>
-        </div>    
+        </div>
+
+        <script>
+        window.addEventListener("load", function() {
+            let form = document.querySelector("form");
+            form.addEventListener("submit", function(event) {
+                let cargoMass = document.querySelector("input[name=cargoMass]");
+                let fuelLevel = document.querySelector("input[name=fuelLevel]");
+                let copilotName = document.querySelector("input[name=copilotName]");
+                let pilotName = document.querySelector("input[name=pilotName]");
+                if (pilotName.value === "" || copilotName.value === "" ||  fuelLevel.value === "" || cargoMass.value === "") {
+                    alert("All fields are required!");
+                }
+                console.log(typeof copilotName.value);
+                {
+                }
+            });
+        });
+        </script>
     </body>
 </html>
