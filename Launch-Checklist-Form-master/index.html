@@ -35,12 +35,8 @@
                     <li id="copilotStatus">Co-pilot Ready</li>
                     <li id="fuelStatus">Fuel level high enough for launch</li>
                     <li id="cargoStatus">Cargo mass low enough for launch</li>
-                </ol>
-            </div>
-        </div>
-
         <script>
-        window.addEventListener("load", function() {
+            window.addEventListener("load", function() {
             let form = document.querySelector("form");
             form.addEventListener("submit", function(event) {
                 let cargoMass = document.querySelector("input[name=cargoMass]");
@@ -49,12 +45,21 @@
                 let pilotName = document.querySelector("input[name=pilotName]");
                 if (pilotName.value === "" || copilotName.value === "" ||  fuelLevel.value === "" || cargoMass.value === "") {
                     alert("All fields are required!");
+                    event.preventDefault();
+                    if (fuelLevel.value === "1") {
+                        console.log("fuelLevel")
+                        document.getElementById("faultyItems").style.visibility = "visible"; 
+                 //} else if (fuelLevel.value >= 10,000) {
+                   //  faultyItems === visible
                 }
-                console.log(typeof copilotName.value);
-                {
+                // console.log(typeof copilotName.value);  
                 }
             });
         });
         </script>
+                </ol>
+            </div>
+        </div>
+
     </body>
 </html>
